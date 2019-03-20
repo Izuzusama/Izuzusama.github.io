@@ -37,7 +37,7 @@
 
   <script>
     var onSubmit = function (data) {
-      window.location = $config.resumeApiUrl + data;
+      window.location = "https://api.bobng.com/resume?id=" + data;
     };
   </script>
   
@@ -113,9 +113,11 @@
 </section>
 
 <div class="main-content">
+  
   <div class="g-recaptcha" data-sitekey="6LfA3JgUAAAAAJtomd6LJ6qbHBHqWXLyvIb6ICA8" data-callback="onSubmit"
     data-size="invisible">
   </div>
+  
   
   
   
