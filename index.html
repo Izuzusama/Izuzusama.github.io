@@ -14,8 +14,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-    crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   
   <link rel="stylesheet" href="https://d1azc1qln24ryf.cloudfront.net/114779/Socicon/style-cf.css?u8vidh">
   <link rel="stylesheet" type="text/css" href="https://bobng.com/css/styles.css">
@@ -23,13 +23,24 @@
   <link href="https://fonts.googleapis.com/css?family=Montserrat:800" rel="stylesheet">
   <link rel="stylesheet" href="https://bobng.com/css/highlight.css">
   
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
-    crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+    integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
 
   
   <meta name="author" content="Bob Ng">
   <meta name="theme-color" content="#000000">
+
+  
+  
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+  <script>
+    var onSubmit = function (data) {
+      window.location = $config.resumeApiUrl + data;
+    };
+  </script>
+  
 
   
   <link href="https://bobng.com/index.xml" rel="alternate" type="application/rss+xml" title="Bob Here" />
@@ -73,6 +84,7 @@
 <body class="clearfix">
 
 
+
 <section id="sidebar" class="sidebar d-flex align-items-center p-5">
   <div class="main-info">
     
@@ -88,14 +100,20 @@
       
 
     </div>
+    
+    <button onclick="grecaptcha.execute();" class="btn btn-primary btn-lg">Download Resume</button>
+    
 
+    
     <a href="#contact" class="btn btn-dark btn-lg">Contact</a>
-
+    
 
   </div>
 </section>
 
 <div class="main-content">
+  <div class="g-recaptcha" data-sitekey=".Site.Config.recapchaSiteKey" data-callback="onSubmit" data-size="invisible">
+  </div>
   
   
   
@@ -142,7 +160,7 @@
   
   
   <div>
-    <h2 class="heading">Buzzword</h2>
+    <h2 class="heading">$skills.buzzword_title</h2>
     
     <div>.NET &amp; ASP.NET &amp; Entity Framework &amp; Core</div>
     
@@ -231,6 +249,7 @@
   
 </div>
 
+
 <div class="main-content">
   
 <section id="contact" class="bg-light d-flex align-items-center" style="height: 100vh;">
@@ -262,6 +281,7 @@
   </div>
 </section>
 </div>
+
 
 <script src="https://blog.uicard.io/js/highlight.min.js"></script>
 <script>
